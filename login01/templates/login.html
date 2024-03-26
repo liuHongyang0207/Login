@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="{% static '/css/login01.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>登录</h2>
+        <form  method="post" action="{% url 'login' %} ">
+            {% csrf_token %}
+
+            <label for="username"></label>
+            <input type="text" id="username" name="username" placeholder="请输入用户名">
+
+            <label for="password"></label>
+            <input type="password" id="password" name="password" placeholder="请输入密码">
+
+            <button type="submit">登录</button>
+        </form>
+        <a href="#">忘记密码？</a>
+        <a href="{% url 'Register' %}">点击注册</a>
+    </div>
+</body>
+</html>
